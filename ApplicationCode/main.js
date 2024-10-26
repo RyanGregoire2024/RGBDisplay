@@ -3,9 +3,12 @@ function GetColors(args) {
 }
 var button = document.getElementById("button");
 button.addEventListener("click", function (e) {
-    var color = document.getElementById("innerText");
-    var value = color.value;
-    var getColor = GetColors(value);
-    document.body.style.backgroundColor = "#" + getColor;
+    var UI = {
+        color: document.body,
+        hexValue: document.getElementById("innerText"),
+        mappedArray: []
+    };
+    var getColor = GetColors(UI.hexValue.value);
+    document.body.style.backgroundColor = "#" + UI.hexValue.value;
     e.preventDefault();
 });

@@ -4,11 +4,16 @@ function GetColors(args: any) {
 
 const button = document.getElementById("button");
 button.addEventListener("click",(e) => {
-    const color: any = document.getElementById("innerText");
-    const value = color.value;
 
-    const getColor = GetColors(value);
-    document.body.style.backgroundColor = "#" + getColor;
+    const UI :any = {
+        color: document.body,
+        hexValue: document.getElementById("innerText"),
+        mappedArray: []
+
+    }
+
+    const getColor = GetColors(UI.hexValue.value);
+    document.body.style.backgroundColor = "#" +UI.hexValue.value;
 
     e.preventDefault();
 });
